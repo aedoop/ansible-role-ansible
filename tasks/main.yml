@@ -1,0 +1,11 @@
+---
+# tasks file for ansible
+
+- name: Install dev package ansible depends on
+  package: name={{ item }} state=present
+  with_items:
+    - epel-release
+  become: yes
+
+- name: Install ansible
+  package: name=ansible state=present
